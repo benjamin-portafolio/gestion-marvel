@@ -10,10 +10,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.openpay.libreriamarvel.app.LibreriaMarvelAppImpl;
+import com.openpay.libreriamarvel.VO.CharactersByIdInVO;
 import com.openpay.gestionmarvel.model.Usuario;
 import com.openpay.gestionmarvel.repository.UsuarioRepository;
 //import com.openpay.gestionmarvel.repositry.UsuarioRepository;
-import com.openpay.libreriamarvel.VO.CharactersByIdInVO;
+//import com.openpay.libreriamarvel.VO.CharactersByIdInVO;
 
 @SpringBootApplication
 @EnableJpaRepositories
@@ -23,8 +24,8 @@ import com.openpay.libreriamarvel.VO.CharactersByIdInVO;
 @Service
 
 public class GestionMarvelServiceImpl implements GestionMarvelService {
-	@Autowired
-	UsuarioRepository usuarioRepository;
+//	@Autowired
+//	UsuarioRepository usuarioRepository;
 	
 	@Value("${marvel.public.key}")
 	String publicKey;
@@ -46,6 +47,7 @@ public class GestionMarvelServiceImpl implements GestionMarvelService {
 		charactersByIdInVO.setPublicKey(publicKey);
 		charactersByIdInVO.setPrivateKey(privateKey);
 		return libreria.getCharactersById(charactersByIdInVO);
+		
 	}
 	@Override
 	public Usuario createUsuario(Usuario usuario) {
